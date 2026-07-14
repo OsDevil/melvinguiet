@@ -517,13 +517,20 @@ img { display: block; max-width: 100%; }
 /* ── PRINT ── */
 @media print {
   .top-nav, .modal, .toast { display: none !important; }
-  body { background: white; color: #111; }
-  .card { background: white; border-color: #ddd; }
+  body { background: white !important; color: #111 !important; }
+  .card { background: white !important; border-color: #ddd !important; }
   .hero-name .last, .tl-date, .interest-label, .skill-check { color: #5a7a18 !important; }
   .dot.on { background: #5a7a18 !important; border-color: #5a7a18 !important; }
   .tl-stem { background: #ccc; }
   .tl-dot { background: #5a7a18; box-shadow: none; }
   .muted, .tl-desc, .interest-text { color: #555 !important; }
-  .videos-grid { display: none; }
+  .videos-grid { display: none !important; }
   .section-title { border-color: #5a7a18; }
+
+  /* Force desktop layout regardless of print viewport */
+  .hero { display: grid !important; grid-template-columns: 160px 1fr auto !important; gap: 36px !important; }
+  .main-layout { display: grid !important; grid-template-columns: 200px 1fr 280px !important; gap: 16px !important; }
+  .col-left, .col-right { order: 0 !important; grid-column: auto !important; }
+  .hero-velo { display: block !important; width: 260px !important; height: 200px !important; }
+  .hero-photo { width: 130px !important; height: 196px !important; }
 }
